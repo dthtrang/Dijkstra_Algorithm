@@ -55,7 +55,6 @@ def Dijskstra(graph,start,dest):
     print("Shortest Distance", str(data_table[dest]['distance']))
     print("Shortest Path", str(data_table[dest]['prev'] + list(dest)))
 
-
 '''
 Driver code. The graph is defined in here
 '''
@@ -70,5 +69,5 @@ if __name__ == "__main__":
         }
 
     start = 'A'
-    destination = 'E'
+    destination = 'F'
     Dijskstra(water_supply,start,destination)
