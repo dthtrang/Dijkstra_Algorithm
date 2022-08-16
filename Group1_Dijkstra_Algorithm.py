@@ -17,7 +17,8 @@ def Dijskstra(graph,start,dest):
                  'C':{'distance':inf, 'prev':[]},
                  'D':{'distance':inf, 'prev':[]},
                  'E':{'distance':inf, 'prev':[]},
-                 'F':{'distance':inf, 'prev':[]}
+                 'F':{'distance':inf, 'prev':[]},
+                 'G':{'distance':inf, 'prev':[]}
                  }
 
     # distance to start node from start is 0
@@ -59,15 +60,16 @@ def Dijskstra(graph,start,dest):
 Driver code. The graph is defined in here
 '''
 if __name__ == "__main__":
-    water_supply = {
-        'A':{'B':2,'C':4},
-        'B':{'A':2,'C':3,'D':8},
-        'C':{'A':4,'B':3,'E':5,'D':2},
-        'D':{'B':8,'C':2,'E':11,'F':22},
-        'E':{'C':5,'D':11,'F':1},
-        'F':{'D':22,'E':1}
+    graph = {
+        'A':{'B':14.1,'C':16.8, 'D':18.6},
+        'B':{'A':14.1,'D':6.3},
+        'C':{'A':16.8,'D':2.4,'F':7.8},
+        'D':{'A':18.6,'B':6.3,'C':2.4,'E':5.2,'F':4.3},
+        'E':{'D':5.2,'G':5.3},
+        'F':{'C':7.8,'D':4.3,'G':5.4},
+        'G':{'E':5.3,'F':5.4}
         }
 
     start = 'A'
-    destination = 'F'
-    Dijskstra(water_supply,start,destination)
+    destination = 'G'
+    Dijskstra(graph,start,destination)
